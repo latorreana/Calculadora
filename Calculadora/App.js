@@ -9,7 +9,6 @@ export default function App() {
   const [currentNumber, setCurrentNumber] = useState("")
   const [lastNumber, setLastNumber] = useState("")
 
-
   function calculator() {
     const splitNumbers = currentNumber.split(' ')
     const firstNumber = parseFloat(splitNumbers[0])
@@ -20,25 +19,25 @@ export default function App() {
     switch (operator) {
       case '+':
         setCurrentNumber((firstNumber + lastNumber).toString())
-        return
+        break
       case '-':
         setCurrentNumber((firstNumber - lastNumber).toString())
-        return
+        break
       case 'x':
         setCurrentNumber((firstNumber * lastNumber).toString())
-        return
+        break
       case '/':
         setCurrentNumber((firstNumber / lastNumber).toString())
-        return
+        break
       case '%':
-        setCurrentNumber(((firstNumber * lastNumber / 100)).toString())
-        return
+        setCurrentNumber((firstNumber * 0.01).toString())
+        break
     }
   }
 
   function handleInput(buttonPressed) {
     console.log(buttonPressed) // Mostra no Console a tecla pressionada
-    if (buttonPressed === '+' | buttonPressed === "-" | buttonPressed === "x" | buttonPressed === "/") {
+    if (buttonPressed === '+' | buttonPressed === "-" | buttonPressed === "x" | buttonPressed === "/" | buttonPressed === "%") {
       setCurrentNumber(currentNumber + " " + buttonPressed + " ")
       return
     }
@@ -62,8 +61,9 @@ export default function App() {
         calculator()
         return
     }
-
+    
     setCurrentNumber(currentNumber + buttonPressed)
+    
   }
 
   return (
