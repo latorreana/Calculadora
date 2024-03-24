@@ -19,19 +19,19 @@ export default function App() {
     switch (operator) {
       case '+':
         setCurrentNumber((firstNumber + lastNumber).toString())
-        break
+        return
       case '-':
         setCurrentNumber((firstNumber - lastNumber).toString())
-        break
+        return
       case 'x':
         setCurrentNumber((firstNumber * lastNumber).toString())
-        break
+        return
       case '/':
         setCurrentNumber((firstNumber / lastNumber).toString())
-        break
+        return
       case '%':
         setCurrentNumber((firstNumber * 0.01).toString())
-        break
+        return
     }
   }
 
